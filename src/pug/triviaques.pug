@@ -1,14 +1,32 @@
 div.btn-group-vertical.mt-2
-    button.btn.btn-light.btn-lg.mt-1#answer1 this one is a test
-    button.btn.btn-light.btn-lg.mt-1#answer2 this one is a test
-    button.btn.btn-light.btn-lg.mt-1#answer3 this one is a test
+    //- button.btn.btn-light.btn-lg.mt-1#answer1 this one is a test
+    //- button.btn.btn-light.btn-lg.mt-1#answer2 this one is a test
+    //- button.btn.btn-light.btn-lg.mt-1#answer3 this one is a test
+
+form#quizForm
+    div.form-group.text-left
+        .checkbox
+            input.quizInput(type="radio" name= "quiz" value="testing") 
+            label.ml-2#answer1(for="checkbox")  
+        .checkbox
+            input.quizInput(type="radio" name= "quiz" value="testing")
+            label.ml-2#answer2(for="checkbox") 
+        .checkbox
+            input.quizInput(type="radio" name= "quiz" value="testing")
+            label.ml-2#answer3(for="checkbox")  
+        input(type="submit")
 
 
-//- <div class="input-group">
-//-   <div class="input-group-prepend">
-//-     <div class="input-group-text">
-//-       <input type="radio" aria-label="Radio button for following text input">
-//-     </div>
-//-   </div>
-//-   <input type="text" class="form-control" aria-label="Text input with radio button">
+
+//- label(for='name') Name:
+//-             input#name.form-control(type='text', placeholder='first and last' name='name')
+
+//- <div class="checkbox">
+//-   <label><input type="checkbox" value="">Option 1</label>
+//- </div>
+//- <div class="checkbox">
+//-   <label><input type="checkbox" value="">Option 2</label>
+//- </div>
+//- <div class="checkbox disabled">
+//-   <label><input type="checkbox" value="" disabled>Option 3</label>
 //- </div>

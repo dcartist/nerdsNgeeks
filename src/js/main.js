@@ -2,12 +2,15 @@ let questNumber = document.querySelector('#questNumber')
 let answer1 = document.querySelector('#answer1')
 let answer2 = document.querySelector('#answer2')
 let answer3 = document.querySelector('#answer3')
+let quizInput = document.querySelectorAll('.quizInput')
 let activeQuestion = document.querySelector('#activeQuestion');
+let quizForm = document.querySelector('#quizForm')
 let questCounter = 0
 let score = 0
 questNumber.innerHTML = "This is another test"
 let questList = []
 let questionsAsked = []
+let userChoice = ''
 class QuestionMaker {
     constructor(question, option1, option2, option3, realAnswer, score) {
         this.question = question;
@@ -18,27 +21,6 @@ class QuestionMaker {
         this.score = score;
     }
 }
-/* 
-//Fisher–Yates Shuffle https://bost.ocks.org/mike/shuffle/
-function shuffle(array) {
-    var m = array.length,
-        t, i;
-
-    // While there remain elements to shuffle…
-    while (m) {
-
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
-
-        // And swap it with the current element.
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-    questionsAsked.push(array)
-    return array;
-}
-// shuffle(questList) */
 //questions listed
 questList[0] = new QuestionMaker('Where does Spongebob Squarepants work?', 'The Krusty Krab', 'Red Lobster', 'The Chum Bucket', 'Krusty Crab', 20)
 questList[1] = new QuestionMaker('Who was the captain of the Enterprise in the pilot episode of Star Trek?', 'Captain Kirk', 'Captain Pike', 'Captian Jones', 'Captain Pike', 45)
@@ -68,22 +50,37 @@ console.log(questList[10].question)
 answer1.innerHTML = "testing #1"
 answer2.innerHTML = "testing #6"
 
-function buttonInput(button, info) {
-    button.innerHTML = `${info}`
-}
+quizForm.addEventListener("submit", function(evt) {
+    evt.preventDefault();
+    let checkedInfo = document.querySelector('input').checked
+    console.loc(checkedInfo)
+        // gameplay();
+
+})
+
+
 answer1.addEventListener("click", function(evt) {
     evt.preventDefault();
     // answer1.innerHTML = questionsAsked[i].option1
     console.log(answer1.innerHTML)
+    userChoice = answer1.innerHTML
+    console.log(userChoice)
+    return userChoice
 })
 
 answer2.addEventListener("click", function(evt) {
     evt.preventDefault();
     console.log(answer2.innerHTML)
+    userChoice = answer2.innerHTML
+    console.log(userChoice)
+    return userChoice
 })
 answer3.addEventListener("click", function(evt) {
     evt.preventDefault();
     console.log(answer3.innerHTML)
+    userChoice = answer3.innerHTML
+    console.log(userChoice)
+    return userChoice
 })
 
 function randomPick() {
@@ -95,13 +92,28 @@ function randomPick() {
         answer1.innerHTML = questionsAsked[i].option1
         answer2.innerHTML = questionsAsked[i].option2
         answer3.innerHTML = questionsAsked[i].option3
+        quizInput[0].value = questionsAsked[i].option1
+        quizInput[1].value = questionsAsked[i].option2
+        quizInput[2].value = questionsAsked[i].option3
 
-        gamePlay(i)
     }
 }
 randomPick()
+
+
+// function gamePlay(x) {
+//     answer1.innerHTML = x.option1
+//     answer2.innerHTML = x.option2
+//     answer3.innerHTML = x.option3
+//     if (userChoice == x.realAnswer) {
+
+//         console.log('correct')
+//     } else {
+//         console.log('incorrect')
+//     }
+// }
+
+
+
 console.log(questionsAsked)
-
-function gamePlay(i) {
-
-}
+console.log(quizInput)
