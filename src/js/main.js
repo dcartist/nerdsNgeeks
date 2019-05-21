@@ -60,7 +60,6 @@ quizForm.addEventListener("submit", function(evt) {
         }
     }
 
-    // let checkedInfo = document.querySelector('.quizInput').checked
     console.log(checkedInfo)
         // gameplay();
 
@@ -69,7 +68,6 @@ quizForm.addEventListener("submit", function(evt) {
 
 answer1.addEventListener("click", function(evt) {
     evt.preventDefault();
-    // answer1.innerHTML = questionsAsked[i].option1
     console.log(answer1.innerHTML)
     userChoice = answer1.innerHTML
     console.log(userChoice)
