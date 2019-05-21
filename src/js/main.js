@@ -52,8 +52,16 @@ answer2.innerHTML = "testing #6"
 
 quizForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
-    let checkedInfo = document.querySelector('input').checked
-    console.loc(checkedInfo)
+    let checkedInfo = ''
+    for (i = 0; i < 3; i++) {
+        if (quizInput[i].checked) {
+            checkedInfo = quizInput[i].value
+            console.log(`The option ${quizInput[i].value} has been checked off `)
+        }
+    }
+
+    // let checkedInfo = document.querySelector('.quizInput').checked
+    console.log(checkedInfo)
         // gameplay();
 
 })

@@ -7,24 +7,19 @@ html(lang="en")
         link(rel="stylesheet", href="../css/style.scss")
         title Document
     body.bg-gradient-warning
-
     include nav.pug
-    //- .row
-    //-     .col
-    //-     .col
-    .row
-        div.col
-            div.bg-dark.text-center.align-middle.rounded-circle(style="height: 150px; width: 150px;")
-                h3.text-light#Score(style="margin-top: 10px; padding-top:35px;") score #
-            div.card.mt-5.w-50.mx-auto
-                .card-body.text-center
+    div.col
+        div.float-right.bg-dark.align-middle.rounded-circle(style="height: 150px; width: 150px;")
+            h3.text-center.text-light#Score(style="margin-top: 10px; padding-top:35px;") score #
+        div.card.mt-5.w-50.mx-auto.text-center
+            .card-body.text-center
 
-                    h4 Question # 
-                        span#questNumber this is a span
-                    hr
-                    p#activeQuestion this is a test
-                    hr
-                    include triviaques.pug
+                h4 Question # 
+                    span#questNumber this is a span
+                hr
+                p#activeQuestion this is a test
+                hr
+                include triviaques.pug
 
                 //- button ENTER
     script(src="../js/main.js")
