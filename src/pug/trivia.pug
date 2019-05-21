@@ -18,12 +18,15 @@ html(lang="en")
                 h3.text-light#Score(style="margin-top: 10px; padding-top:35px;") score #
             div.card.mt-5.w-50.mx-auto
                 .card-body.text-center
-                    h1 Question # 
+
+                    h4 Question # 
                         span#questNumber this is a span
-                    p this is a test
+                    hr
+                    p#activeQuestion this is a test
+                    hr
                     include triviaques.pug
 
-                button ENTER
+                //- button ENTER
     script(src="../js/main.js")
 
 
