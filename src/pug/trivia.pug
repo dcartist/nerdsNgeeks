@@ -9,10 +9,22 @@ html(lang="en")
     body.bg-gradient-warning
 
     include nav.pug
-    div.col 
-        div.card.mt-5
+    div.col
+        div.card.mt-5.w-50.mx-auto
             .card-body.text-center
                 h1 Question # 
                 p this is a test
+                include triviaques.pug
+
+
+
+//-<div class="input-group">
+//-   <div class="input-group-prepend">
+//-     <div class="input-group-text">
+//-       <input type="radio" aria-label="Radio button for following text input">
+//-     </div>
+//-   </div>
+//-   <input type="text" class="form-control" aria-label="Text input with radio button">
+//- </div>
 
     
