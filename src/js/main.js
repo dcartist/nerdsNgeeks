@@ -7,6 +7,7 @@ let activeQuestion = document.querySelector('#activeQuestion');
 let quizForm = document.querySelector('#quizForm')
 let questCounter = 0
 let score = 0
+let quizTrigger = true
 questNumber.innerHTML = "This is another test"
 let questList = []
 let questionsAsked = []
@@ -45,23 +46,77 @@ questList[19] = new QuestionMaker('Who is the author of the book “A Brief Hist
 questList[20] = new QuestionMaker('Leonard Nimoy  provided the voice for which Transformer in “The Transformers: The Movie” released in 1986?', 'Unicron', 'Galvatron', 'Optimus Prime', 'Galvatron', 40)
 
 
-console.log(questList[10].option1)
-console.log(questList[10].question)
-answer1.innerHTML = "testing #1"
-answer2.innerHTML = "testing #6"
+function randomPick() {
+    for (i = 0; i < 11; i++) {
+        let newNum = Math.floor(Math.random() * 20)
+        questionsAsked.push(questList[newNum])
+        return questionsAsked
+    }
+}
+randomPick()
+
+function displayQuiz(x) {
+    activeQuestion.innerHTML = questionsAsked[x].question
+    questNumber.innerHTML = `${x + 1}`
+    answer1.innerHTML = questionsAsked[x].option1
+    answer2.innerHTML = questionsAsked[x].option2
+    answer3.innerHTML = questionsAsked[x].option3
+    quizInput[0].value = questionsAsked[x].option1
+    quizInput[1].value = questionsAsked[x].option2
+    quizInput[2].value = questionsAsked[x].option3
+        // quizTrigger = true
+    return [x]
+}
+
+// console.log(questList[10].option1)
+// console.log(questList[10].question)
+// answer1.innerHTML = "testing #1"
+// answer2.innerHTML = "testing #6"
+
+let inputQuiz = questionsAsked[questCounter]
+displayQuiz(questCounter)
 
 quizForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
-    let checkedInfo = ''
-    for (i = 0; i < 3; i++) {
-        if (quizInput[i].checked) {
-            checkedInfo = quizInput[i].value
-            console.log(`The option ${quizInput[i].value} has been checked off `)
-        }
-    }
+    console.log(questionsAsked[questCounter])
+    let answer = questionsAsked[questCounter].realAnswer
+    console.log(questionsAsked[questCounter].realAnswer)
+    if (quizTrigger) {
+        for (i = 0; i < 3; i++) {
+            if (quizInput[i].checked == answer) {
+                let checkedInfo = questionsAsked[questCounter]
+                console.log(`The option ${quizInput[i].value} has been checked off `)
+                    /* activeQuestion.innerHTML = checkedInfo.question
+                    questNumber.innerHTML = `${questCounter + 1}`
+                    answer1.innerHTML = questionsAsked[questCounter].option1
+                    answer2.innerHTML = questionsAsked[questCounter].option2
+                    answer3.innerHTML = questionsAsked[questCounter].option3
+                    quizInput[0].value = questionsAsked[questCounter].option1
+                    quizInput[1].value = questionsAsked[questCounter].option2
+                    quizInput[2].value = questionsAsked[questCounter].option3 */
+                questCounter++
+                // displayQuiz(questCounter)
+            } else {
+                console.log('Wrong answer')
+                console.log(questCounter)
+                    /* 
+                                    let checkedInfo = questionsAsked[questCounter]
+                                    activeQuestion.innerHTML = checkedInfo.question
+                                    questNumber.innerHTML = `${questCounter + 1}`
+                                    answer1.innerHTML = questionsAsked[questCounter].option1
+                                    answer2.innerHTML = questionsAsked[questCounter].option2
+                                    answer3.innerHTML = questionsAsked[questCounter].option3
+                                    quizInput[0].value = questionsAsked[questCounter].option1
+                                    quizInput[1].value = questionsAsked[questCounter].option2
+                                    quizInput[2].value = questionsAsked[questCounter].option3 */
 
-    console.log(checkedInfo)
-        // gameplay();
+                // displayQuiz(questCounter)
+
+            }
+        }
+
+    }
+    return questCounter++
 
 })
 
@@ -89,35 +144,6 @@ answer3.addEventListener("click", function(evt) {
     return userChoice
 })
 
-function randomPick() {
-    for (i = 0; i < 11; i++) {
-        let newNum = Math.floor(Math.random() * 20)
-        questionsAsked.push(questList[newNum])
-        activeQuestion.innerHTML = questionsAsked[i].question
-        questNumber.innerHTML = `${i}`
-        answer1.innerHTML = questionsAsked[i].option1
-        answer2.innerHTML = questionsAsked[i].option2
-        answer3.innerHTML = questionsAsked[i].option3
-        quizInput[0].value = questionsAsked[i].option1
-        quizInput[1].value = questionsAsked[i].option2
-        quizInput[2].value = questionsAsked[i].option3
-
-    }
-}
-randomPick()
-
-
-// function gamePlay(x) {
-//     answer1.innerHTML = x.option1
-//     answer2.innerHTML = x.option2
-//     answer3.innerHTML = x.option3
-//     if (userChoice == x.realAnswer) {
-
-//         console.log('correct')
-//     } else {
-//         console.log('incorrect')
-//     }
-// }
 
 
 
