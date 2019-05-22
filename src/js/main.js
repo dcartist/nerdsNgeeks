@@ -53,6 +53,14 @@ function randomPick() {
 }
 randomPick()
 
+function clearTheQuiz() {
+    quizInput[0].checked = false
+    quizInput[1].checked = false
+    quizInput[2].checked = false
+    newQuestion = questionsAsked[questCounter]
+    displayQuiz()
+}
+
 function displayQuiz() {
     console.log(questionsAsked[questCounter])
     activeQuestion.innerHTML = questionsAsked[questCounter].question
@@ -63,42 +71,13 @@ function displayQuiz() {
     quizInput[0].value = questionsAsked[questCounter].option1
     quizInput[1].value = questionsAsked[questCounter].option2
     quizInput[2].value = questionsAsked[questCounter].option3
+
 }
 displayQuiz()
-
+var newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
         evt.preventDefault();
-        console.log(quizInput)
-        var newQuestion = questionsAsked[questCounter]
-        console.log(newQuestion)
-        console.log(questionsAsked[questCounter].realAnswer)
-        if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
-            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-            questCounter += 1 // displayQuiz(questCounter)
-            quizInput[0].checked = false
-            console.log(questCounter)
-                // return questCounter
-        } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
-            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-            questCounter += 1 // displayQuiz(questCounter)
-            console.log(questCounter)
-            quizInput[1].checked = false
-                // return questCounter
-        } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
-            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-            questCounter += 1 // displayQuiz(questCounter)
-            console.log(questCounter)
-            quizInput[2].checked = false
-            return questCounter
-        } else {
-            questCounter += 1
 
-        }
-        // newQuestion = questionsAsked[questCounter]
-        console.log(newQuestion)
-        console.log(newQuestion.question)
 
-        // quizForm.reset()
-        return questCounter
     })
     // console.log(questCounter)

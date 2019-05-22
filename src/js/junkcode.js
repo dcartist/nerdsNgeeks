@@ -122,3 +122,41 @@ console.log(quizInput) */
 // quizInput[1].value = newQuestion.option2
 // quizInput[2].value = newQuestion.option3
 // return [questionsAsked, questCounter]
+
+
+
+
+// Murphy's law
+/* 
+
+console.log(quizInput)
+console.log(newQuestion)
+console.log(questionsAsked[questCounter].realAnswer)
+    //checking to see if the selected button is correct or not
+if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
+    console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+    questCounter += 1 // adds to the quiz counter
+    console.log(questCounter) // testing to see if counter works
+        // return questCounter
+} else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
+    console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+    questCounter += 1 // adds to the quiz counter
+    console.log(questCounter) // testing to see if counter works
+
+    // return questCounter
+} else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
+    console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+    questCounter += 1 // adds to the quiz counter
+    console.log(questCounter)   // testing to see if counter works
+    return questCounter
+} else {
+    questCounter += 1
+
+}
+// newQuestion = questionsAsked[questCounter]
+console.log(newQuestion)
+console.log(newQuestion.question)
+    // clearTheQuiz()
+    // quizForm.reset()
+clearTheQuiz()
+return questCounter */
