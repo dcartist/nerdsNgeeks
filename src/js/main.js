@@ -67,42 +67,38 @@ function displayQuiz() {
 displayQuiz()
 
 quizForm.addEventListener("submit", function(evt) {
-    evt.preventDefault();
-    console.log(quizInput)
-    var newQuestion = questionsAsked[questCounter]
-    console.log(newQuestion)
-    console.log(questionsAsked[questCounter].realAnswer)
-    if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
-        console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-        questCounter += 1 // displayQuiz(questCounter)
-        quizInput[0].checked = false
-    } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
-        console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-        questCounter += 1 // displayQuiz(questCounter)
-        quizInput[1].checked = false
-
-    } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
-        console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-        questCounter += 1 // displayQuiz(questCounter)
-        quizInput[2].checked = false
-
-    } else(
+        evt.preventDefault();
+        console.log(quizInput)
+        var newQuestion = questionsAsked[questCounter]
+        console.log(newQuestion)
+        console.log(questionsAsked[questCounter].realAnswer)
+        if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // displayQuiz(questCounter)
+            quizInput[0].checked = false
+            console.log(questCounter)
+                // return questCounter
+        } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // displayQuiz(questCounter)
+            console.log(questCounter)
+            quizInput[1].checked = false
+                // return questCounter
+        } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // displayQuiz(questCounter)
+            console.log(questCounter)
+            quizInput[2].checked = false
+            return questCounter
+        } else {
             questCounter += 1
-        )
-        // newQuestion = questionsAsked[questCounter]
-    console.log(newQuestion)
 
-    // displayQuiz(questCounter)
-    // activeQuestion.innerHTML = newQuestion.question
-    // questNumber.innerHTML = `${questCounter + 1}`
-    // answer1.innerHTML = newQuestion.option1
-    // answer2.innerHTML = newQuestion.option2
-    // answer3.innerHTML = newQuestion.option3
-    // quizInput[0].value = newQuestion.option1
-    // quizInput[1].value = newQuestion.option2
-    // quizInput[2].value = newQuestion.option3
-    // return [questionsAsked, questCounter]
-    displayQuiz()
+        }
+        // newQuestion = questionsAsked[questCounter]
+        console.log(newQuestion)
+        console.log(newQuestion.question)
+
         // quizForm.reset()
-})
-console.log(questCounter)
+        return questCounter
+    })
+    // console.log(questCounter)

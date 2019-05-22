@@ -107,3 +107,18 @@ quizForm.addEventListener("submit", function(evt, questCounter) {
 
 console.log(questionsAsked)
 console.log(quizInput) */
+
+
+
+
+
+// displayQuiz(questCounter)
+// activeQuestion.innerHTML = newQuestion.question
+// questNumber.innerHTML = `${questCounter + 1}`
+// answer1.innerHTML = newQuestion.option1
+// answer2.innerHTML = newQuestion.option2
+// answer3.innerHTML = newQuestion.option3
+// quizInput[0].value = newQuestion.option1
+// quizInput[1].value = newQuestion.option2
+// quizInput[2].value = newQuestion.option3
+// return [questionsAsked, questCounter]
