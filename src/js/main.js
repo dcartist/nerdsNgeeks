@@ -6,7 +6,9 @@ var quizInput = document.querySelectorAll('.quizInput')
 var activeQuestion = document.querySelector('#activeQuestion');
 var quizForm = document.querySelector('#quizForm')
 var questCounter = 0
-var score = 0
+var scoreNum = 0
+var score = document.querySelector('#score')
+score.innerHTML = 0
 questNumber.innerHTML = "This is another test"
 var mainQList = [] // Main list of questions
 var questionsAsked = []
@@ -44,8 +46,8 @@ mainQList[19] = new QuestionMaker('Who is the author of the book “A Brief Hist
 mainQList[20] = new QuestionMaker('Leonard Nimoy  provided the voice for which Transformer in “The Transformers: The Movie” released in 1986?', 'Unicron', 'Galvatron', 'Optimus Prime', 'Galvatron', 40)
     //makes the list of questions random
 function randomPick() {
-    for (i = 0; i < 11; i++) {
-        var newNum = Math.floor(Math.random() * 20)
+    for (i = 0; i < 12; i++) {
+        var newNum = Math.floor(Math.random() * 21)
         questionsAsked.push(mainQList[newNum])
     }
     return questionsAsked
@@ -73,6 +75,20 @@ function displayQuiz() {
 
 }
 displayQuiz()
+
+function scoring(updatedScore) {
+    scoreNum += updatedScore
+    score.innerHTML = scoreNum
+    return scoreNum
+}
+
+function endGame(questCounter) {
+    if (questCounter > 10) {
+        window.alert('done')
+        console.log('done')
+        window.location.href = "../pug/endgame.pug"
+    }
+}
 console.log(questionsAsked)
 let newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
@@ -80,29 +96,42 @@ quizForm.addEventListener("submit", function(evt) {
         // questCounter++
         console.log(questCounter)
             // console.log(questionsAsked)
+        endGame(questCounter)
         if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            scoring(questionsAsked[questCounter].score)
             questCounter += 1 // adds to the quiz counter
+            endGame(questCounter)
             console.log(questCounter) // testing to see if counter works
                 // return questCounter
+            clearTheQuiz()
             displayQuiz()
         } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
             questCounter += 1 // adds to the quiz counter
+            endGame(questCounter)
             console.log(questCounter) // testing to see if counter works
+            scoring(questionsAsked[questCounter].score)
+            clearTheQuiz()
             displayQuiz()
                 // return questCounter
         } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
             questCounter += 1 // adds to the quiz counter
+            endGame(questCounter)
             console.log(questCounter)   // testing to see if counter works
+            scoring(questionsAsked[questCounter].score)
+            clearTheQuiz()
             displayQuiz()
             return questCounter
         } else {
             questCounter += 1
+            clearTheQuiz()
             displayQuiz()
 
         }
+
+
         newQuestion = questionsAsked[questCounter]
         console.log(newQuestion)
         console.log(newQuestion.question)
