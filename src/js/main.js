@@ -10,7 +10,6 @@ var score = 0
 questNumber.innerHTML = "This is another test"
 var mainQList = [] // Main list of questions
 var questionsAsked = []
-var userChoice = ''
 class QuestionMaker {
     constructor(question, option1, option2, option3, realAnswer, score) {
         this.question = question;
@@ -48,8 +47,8 @@ function randomPick() {
     for (i = 0; i < 11; i++) {
         var newNum = Math.floor(Math.random() * 20)
         questionsAsked.push(mainQList[newNum])
-        return questionsAsked
     }
+    return questionsAsked
 }
 randomPick()
 
@@ -58,11 +57,11 @@ function clearTheQuiz() {
     quizInput[1].checked = false
     quizInput[2].checked = false
     newQuestion = questionsAsked[questCounter]
-    displayQuiz()
+        // displayQuiz()
 }
 
 function displayQuiz() {
-    console.log(questionsAsked[questCounter])
+    newQuestion = questionsAsked[questCounter]
     activeQuestion.innerHTML = questionsAsked[questCounter].question
     questNumber.innerHTML = `${questCounter + 1}`
     answer1.innerHTML = questionsAsked[questCounter].option1
@@ -74,9 +73,45 @@ function displayQuiz() {
 
 }
 displayQuiz()
-var newQuestion = questionsAsked[questCounter]
+console.log(questionsAsked)
+let newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
         evt.preventDefault();
+        // questCounter++
+        console.log(questCounter)
+            // console.log(questionsAsked)
+        if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // adds to the quiz counter
+            console.log(questCounter) // testing to see if counter works
+                // return questCounter
+            displayQuiz()
+        } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // adds to the quiz counter
+            console.log(questCounter) // testing to see if counter works
+            displayQuiz()
+                // return questCounter
+        } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
+            console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            questCounter += 1 // adds to the quiz counter
+            console.log(questCounter)   // testing to see if counter works
+            displayQuiz()
+            return questCounter
+        } else {
+            questCounter += 1
+            displayQuiz()
+
+        }
+        newQuestion = questionsAsked[questCounter]
+        console.log(newQuestion)
+        console.log(newQuestion.question)
+        clearTheQuiz()
+        return questCounter
+
+
+
+
 
 
     })

@@ -127,7 +127,7 @@ console.log(quizInput) */
 
 
 // Murphy's law
-/* 
+
 
 console.log(quizInput)
 console.log(newQuestion)
@@ -159,4 +159,4 @@ console.log(newQuestion.question)
     // clearTheQuiz()
     // quizForm.reset()
 clearTheQuiz()
-return questCounter */
+return questCounter
