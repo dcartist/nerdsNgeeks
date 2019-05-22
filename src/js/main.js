@@ -53,10 +53,10 @@ function randomPick() {
 }
 randomPick()
 
-function displayQuiz(x, y = questionsAsked) {
+function displayQuiz() {
     console.log(questionsAsked[questCounter])
     activeQuestion.innerHTML = questionsAsked[questCounter].question
-    questNumber.innerHTML = `${x + 1}`
+    questNumber.innerHTML = `${questCounter + 1}`
     answer1.innerHTML = questionsAsked[questCounter].option1
     answer2.innerHTML = questionsAsked[questCounter].option2
     answer3.innerHTML = questionsAsked[questCounter].option3
@@ -64,7 +64,7 @@ function displayQuiz(x, y = questionsAsked) {
     quizInput[1].value = questionsAsked[questCounter].option2
     quizInput[2].value = questionsAsked[questCounter].option3
 }
-displayQuiz(questCounter)
+displayQuiz()
 
 quizForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
@@ -72,7 +72,6 @@ quizForm.addEventListener("submit", function(evt) {
     var newQuestion = questionsAsked[questCounter]
     console.log(newQuestion)
     console.log(questionsAsked[questCounter].realAnswer)
-
     if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
         console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
         questCounter += 1 // displayQuiz(questCounter)
@@ -92,16 +91,18 @@ quizForm.addEventListener("submit", function(evt) {
         )
         // newQuestion = questionsAsked[questCounter]
     console.log(newQuestion)
-        // displayQuiz(questCounter)
-        // activeQuestion.innerHTML = newQuestion.question
-        // questNumber.innerHTML = `${questCounter + 1}`
-        // answer1.innerHTML = newQuestion.option1
-        // answer2.innerHTML = newQuestion.option2
-        // answer3.innerHTML = newQuestion.option3
-        // quizInput[0].value = newQuestion.option1
-        // quizInput[1].value = newQuestion.option2
-        // quizInput[2].value = newQuestion.option3
-        // return [questionsAsked, questCounter]
-    displayQuiz1(newQuestion)
+
+    // displayQuiz(questCounter)
+    // activeQuestion.innerHTML = newQuestion.question
+    // questNumber.innerHTML = `${questCounter + 1}`
+    // answer1.innerHTML = newQuestion.option1
+    // answer2.innerHTML = newQuestion.option2
+    // answer3.innerHTML = newQuestion.option3
+    // quizInput[0].value = newQuestion.option1
+    // quizInput[1].value = newQuestion.option2
+    // quizInput[2].value = newQuestion.option3
+    // return [questionsAsked, questCounter]
+    displayQuiz()
+        // quizForm.reset()
 })
 console.log(questCounter)
