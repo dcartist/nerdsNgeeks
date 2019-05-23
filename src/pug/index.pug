@@ -5,12 +5,12 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         include head.pug
-    body
+    body.mainBackground
     //- include nav.pug
-    div.text-center.mainBackground.text-white
+    div.text-center.text-white
         img.w-75(src="../img/NNG-80s.png", alt="Nerds-N-Geeks Social", srcset="")
         hr.w-50(style="height: 2px; color:white; background-color:white;")
         h3 trivia game
         a.mt-5.btn-warning.nodeco(href="../pug/trivia.pug") Enter if you dare!
-    include footer.pug
         //- script(src="../js/main.js")
+    include footer.pug
