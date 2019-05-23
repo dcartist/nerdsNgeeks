@@ -85,14 +85,14 @@ mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'He
 
 
 //makes the list of questions random
-function randomPick() {
-    for (i = 0; i < 11; i++) {
-        var newNum = Math.floor(Math.random() * 27)
-        questionsAsked.push(mainQList[newNum])
-    }
-    return questionsAsked
-}
-randomPick()
+// function randomPick() {
+//     for (i = 0; i < 11; i++) {
+//         var newNum = Math.floor(Math.random() * 27)
+//         questionsAsked.push(mainQList[newNum])
+//     }
+//     return questionsAsked
+// }
+// randomPick()
 
 
 //shuffle from https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/
@@ -105,7 +105,6 @@ function shuffle(array) {
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-
         // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
@@ -155,6 +154,7 @@ function endGame(questCounter) {
         theEnd[0].style.display = "block"
         theEnd[1].style.display = "block"
         document.body.classList.remove("designerBack")
+        document.body.className = "mainBackground"
         console.log('done')
             // window.location.href = "thankyou.html"
     }
