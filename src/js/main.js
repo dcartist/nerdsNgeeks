@@ -44,10 +44,17 @@ mainQList[17] = new QuestionMaker('Which of the following is not a name used to 
 mainQList[18] = new QuestionMaker('Head of Scientific Research at UNIT, this cunning lady has met The Doctor multiple times. She helped him deal with small black cubes, the Zygons and even the terrifying Daleks', 'River Song', 'Clara Oswald', 'Kate Stewart', 'Kate Stewart', 30)
 mainQList[19] = new QuestionMaker('Who is the author of the book “A Brief History of Time”?', 'Stephen Hawking', 'Michio Kaku', 'Lawrence M. Krauss', 'Stephen Hawking', 35)
 mainQList[20] = new QuestionMaker('Leonard Nimoy  provided the voice for which Transformer in “The Transformers: The Movie” released in 1986?', 'Unicron', 'Galvatron', 'Optimus Prime', 'Galvatron', 40)
+mainQList[21] = new QuestionMaker('In the Harry Potter series, what is the name of Harry’s pet owl? ', 'Norbert', 'Fawkes', 'Hedwig', 'Hedwig', 30)
+mainQList[22] = new QuestionMaker('Which video game studio created the popular online game Fortnite?', 'Sony', 'Epic Games', 'Bethesda', 'Epic Games', 30)
+mainQList[23] = new QuestionMaker('In 1975 an engineer created the first electronic camera while working for what company?', 'Kodak', 'Canon', 'Nikon', 'Kodak', 30)
+mainQList[24] = new QuestionMaker('What British lead singer was born Farrokh Bulsara?', 'M.I.A.', 'Freddie Mercury', 'Zayn Malik', 'Freddie Mercury', 40)
+mainQList[25] = new QuestionMaker('How many members were in the American rock band The White Stripes?', '3', '4', '2', '2', 20)
+mainQList[26] = new QuestionMaker('Who wrote “Waiting for Godot”?', 'William Butler Yeats', 'Oscar Wilde', 'Samuel Beckett', 'Samuel Beckett', 20)
+mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'Hemolysis', 'Hemolin', 'Hemoglobin', 'Hemoglobin', 40)
     //makes the list of questions random
 function randomPick() {
     for (i = 0; i < 12; i++) {
-        var newNum = Math.floor(Math.random() * 21)
+        var newNum = Math.floor(Math.random() * 27)
         questionsAsked.push(mainQList[newNum])
     }
     return questionsAsked
@@ -72,7 +79,6 @@ function displayQuiz() {
     quizInput[0].value = questionsAsked[questCounter].option1
     quizInput[1].value = questionsAsked[questCounter].option2
     quizInput[2].value = questionsAsked[questCounter].option3
-
 }
 displayQuiz()
 
@@ -100,14 +106,16 @@ quizForm.addEventListener("submit", function(evt) {
         if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
             scoring(questionsAsked[questCounter].score)
-            questCounter += 1 // adds to the quiz counter
             endGame(questCounter)
+            questCounter += 1 // adds to the quiz counter
+
             console.log(questCounter) // testing to see if counter works
                 // return questCounter
             clearTheQuiz()
             displayQuiz()
         } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+
             questCounter += 1 // adds to the quiz counter
             endGame(questCounter)
             console.log(questCounter) // testing to see if counter works
