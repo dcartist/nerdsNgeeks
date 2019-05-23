@@ -5,6 +5,7 @@ var answer3 = document.querySelector('#answer3')
 var quizInput = document.querySelectorAll('.quizInput')
 var activeQuestion = document.querySelector('#activeQuestion');
 var quizForm = document.querySelector('#quizForm')
+var mainQuiz = document.querySelectorAll('.mainQuiz')
 var questCounter = 0
 var scoreNum = 0
 var score = document.querySelector('#score')
@@ -12,6 +13,8 @@ score.innerHTML = 0
 questNumber.innerHTML = "This is another test"
 var mainQList = [] // Main list of questions
 var questionsAsked = []
+
+
 class QuestionMaker {
     constructor(question, option1, option2, option3, realAnswer, score) {
         this.question = question;
@@ -51,7 +54,9 @@ mainQList[24] = new QuestionMaker('What British lead singer was born Farrokh Bul
 mainQList[25] = new QuestionMaker('How many members were in the American rock band The White Stripes?', '3', '4', '2', '2', 20)
 mainQList[26] = new QuestionMaker('Who wrote “Waiting for Godot”?', 'William Butler Yeats', 'Oscar Wilde', 'Samuel Beckett', 'Samuel Beckett', 20)
 mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'Hemolysis', 'Hemolin', 'Hemoglobin', 'Hemoglobin', 40)
-    //makes the list of questions random
+
+
+//makes the list of questions random
 function randomPick() {
     for (i = 0; i < 11; i++) {
         var newNum = Math.floor(Math.random() * 27)
@@ -96,6 +101,7 @@ function endGame(questCounter) {
         window.location.href = "thankyou.html"
     }
 }
+
 console.log(questionsAsked)
 let newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
