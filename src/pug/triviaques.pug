@@ -4,29 +4,19 @@
     //- button.btn.btn-light.btn-lg.mt-1#answer3 this one is a test
 
 form.ml-5.p-3#quizForm
-    div.form-group.text-left
-        .checkbox
+    div.form-group
+        .checkbox.text-left
             input.quizInput(type="radio" name= "quiz" value="testing") 
             label.ml-2#answer1(for="checkbox")  
-        .checkbox
+        .checkbox.text-left
             input.quizInput(type="radio" name= "quiz" value="testing")
             label.ml-2#answer2(for="checkbox") 
-        .checkbox
+        .checkbox.text-left
             input.quizInput(type="radio" name= "quiz" value="testing")
             label.ml-2#answer3(for="checkbox")  
-        input.mt-4(type="submit")
+        input.mt-4.btn-primary.btn-lg.submitButton(type="submit")
+    div.answers(style="display:none;")
+        H2.mb-5.answerText
+        a.btn-danger.btn-lg.w-75.p-3.keepGoing(href="#") Continue 
 
 
-
-//- label(for='name') Name:
-//-             input#name.form-control(type='text', placeholder='first and last' name='name')
-
-//- <div class="checkbox">
-//-   <label><input type="checkbox" value="">Option 1</label>
-//- </div>
-//- <div class="checkbox">
-//-   <label><input type="checkbox" value="">Option 2</label>
-//- </div>
-//- <div class="checkbox disabled">
-//-   <label><input type="checkbox" value="" disabled>Option 3</label>
-//- </div>

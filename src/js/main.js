@@ -13,7 +13,34 @@ score.innerHTML = 0
 questNumber.innerHTML = "This is another test"
 var mainQList = [] // Main list of questions
 var questionsAsked = []
+var starter = document.querySelector('#start')
+var startPanel = document.querySelector(".start")
+var showAnswer = document.querySelector('.answers')
+var answerText = document.querySelector('.answerText')
+var keepGoing = document.querySelector('.keepGoing')
+var submitButton = document.querySelector('.submitButton')
 
+keepGoing.addEventListener("click", function(evt) {
+    evt.preventDefault;
+    questCounter += 1
+    endGame(questCounter)
+    showAnswer.style.display = "none"
+        // submitButton.style.display = "block"
+    submitButton.style.visibility = "visible"
+    clearTheQuiz()
+    displayQuiz()
+    return questCounter
+})
+
+//Beginning panel
+starter.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    startPanel.style.display = "none"
+    mainQuiz[0].style.display = "block"
+    mainQuiz[1].style.display = "block"
+    displayQuiz()
+
+})
 
 class QuestionMaker {
     constructor(question, option1, option2, option3, realAnswer, score) {
@@ -85,7 +112,7 @@ function displayQuiz() {
     quizInput[1].value = questionsAsked[questCounter].option2
     quizInput[2].value = questionsAsked[questCounter].option3
 }
-displayQuiz()
+
 
 function scoring(updatedScore) {
     scoreNum += updatedScore
@@ -96,70 +123,74 @@ function scoring(updatedScore) {
 function endGame(questCounter) {
 
     if (questCounter > 9) {
-        window.alert('done')
+        // window.alert('done')
         console.log('done')
         window.location.href = "thankyou.html"
     }
 }
-
 console.log(questionsAsked)
+
+function showtheAnswer(questCounter) {
+    showAnswer.style.display = "block"
+    answerText.innerHTML = questionsAsked[questCounter].realAnswer
+}
+
 let newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
-        let counter = 1;
+        // let counter = 1;
         evt.preventDefault();
-        // questCounter++
-        console.log(questCounter)
-            // console.log(questionsAsked)
-        endGame(questCounter)
+        submitButton.style.visibility = "hidden"
+
         if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
+            showtheAnswer(questCounter)
+                // submitButton.className += " disabled"
             scoring(questionsAsked[questCounter].score)
-            counter += 1
-            endGame(counter)
-            questCounter += 1 // adds to the quiz counter
 
-            clearTheQuiz()
-            displayQuiz()
         } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
 
-            questCounter += 1 // adds to the quiz counter
-            counter += 1
-            endGame(counter)
+            // quizInput[1].className = "quizInput correct"
+            showtheAnswer(questCounter)
+                // questCounter += 1 // adds to the quiz counter
+                // counter += 1
+                // endGame(counter)
             console.log(questCounter) // testing to see if counter works
             scoring(questionsAsked[questCounter].score)
-            clearTheQuiz()
-            displayQuiz()
+                // displayQuiz()
+                // clearTheQuiz()
                 // return questCounter
         } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
-            questCounter += 1 // adds to the quiz counter
-            counter += 1
-            endGame(counter)
+
+            console.log(quizInput[2])
+                // quizInput[2].className = "quizInput correct"
+            showtheAnswer(questCounter)
+                // questCounter += 1 // adds to the quiz counter
+                // counter += 1
+                // endGame(counter)
             console.log(questCounter)   // testing to see if counter works
             scoring(questionsAsked[questCounter].score)
-            clearTheQuiz()
-            displayQuiz()
-            return questCounter
+                // clearTheQuiz()
+                // displayQuiz()
+                // return questCounter
         } else {
-            questCounter += 1
-            counter += 1
-            endGame(counter)
-            clearTheQuiz()
-            displayQuiz()
+            // submitButton.classList += " disabled"
+            showtheAnswer(questCounter)
+                // questCounter += 1
+                // counter += 1
+                // endGame(counter)
+                // clearTheQuiz()
+                // displayQuiz()
 
         }
 
 
         newQuestion = questionsAsked[questCounter]
-        console.log(newQuestion)
-        console.log(newQuestion.question)
-        clearTheQuiz()
-        return questCounter
-
-
-
-
+            // console.log(newQuestion)
+            // console.log(newQuestion.question)
+            // clearTheQuiz()
+            // return questCounter
 
 
     })

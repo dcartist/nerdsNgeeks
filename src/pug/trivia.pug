@@ -9,36 +9,26 @@ html(lang="en")
         include head.pug
     body.designerBack
     include nav.pug
-    div.col.goldenRatio.text-center
-        div.readyGo.bg-dark.w-50.text-center.mx-auto
-            img(src="../img/gifs/okokgo.gif", alt="okay ready go")
-            a.btn-primary.btn-lg.p-5(href="#") Start
 
-        div.float-right.bg-danger.align-middle.rounded-circle.score.mainQuiz(style="height: 150px; width: 150px; margin-right: 10px;")
+    div.col.goldenRatio.text-center
+        div.readyGo.text-center.mx-auto.start.mt-5
+            img(src="../img/gifs/okokgo.gif", alt="okay ready go")
+            a.btn-dark.btn-lg.p-5(href="#")#start START
+                img(src="../img/icons/power.png", alt="")
+
+        div.float-right.bg-danger.align-middle.rounded-circle.score.mainQuiz(style="height: 150px; width: 150px; margin-right: 10px; display:none;")
             h3.text-center.text-light(style="margin-top: 10px; padding-top:35px;") score #
                 div#score
-        div.card.w-50.mx-auto.text-center.mainQuiz(style="margin-top: 30px;")
+        div.card.w-50.mx-auto.text-center.mainQuiz(style="margin-top: 30px; display:none;")
             .card-body.text-center
                 h4 Question # 
-                    span#questNumber this is a span
+                    span#questNumber 
                 hr
-                h5#activeQuestion this is a test
+                h5#activeQuestion 
                 hr
                 include triviaques.pug
     include endgame.pug
-
                 //- button ENTER
     include footer.pug
+
     script(src="../js/main.js")
-
-
-//-<div class="input-group">
-//-   <div class="input-group-prepend">
-//-     <div class="input-group-text">
-//-       <input type="radio" aria-label="Radio button for following text input">
-//-     </div>
-//-   </div>
-//-   <input type="text" class="form-control" aria-label="Text input with radio button">
-//- </div>
-
-    

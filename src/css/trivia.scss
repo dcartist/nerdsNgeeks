@@ -4,6 +4,20 @@
     background-position-x: -20px;
 }
 
+.mainQuiz {
+    display: none;
+}
+
+// .readyGo a {font-family:}
+.readyGo a img {
+    height: 70px;
+}
+
+.correct {
+    color: green;
+    font-weight: 600;
+}
+
 .designerBack {
     background: linear-gradient(175deg, #feff00, #ffa600, #ff0000, #58007c, #ff0000, #ffbd00, #feff00);
     background-size: 1400% 1400%;
