@@ -53,7 +53,7 @@ mainQList[26] = new QuestionMaker('Who wrote “Waiting for Godot”?', 'William
 mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'Hemolysis', 'Hemolin', 'Hemoglobin', 'Hemoglobin', 40)
     //makes the list of questions random
 function randomPick() {
-    for (i = 0; i < 12; i++) {
+    for (i = 0; i < 11; i++) {
         var newNum = Math.floor(Math.random() * 27)
         questionsAsked.push(mainQList[newNum])
     }
@@ -87,13 +87,13 @@ function scoring(updatedScore) {
     score.innerHTML = scoreNum
     return scoreNum
 }
-
+//ends the game and redirects to thank you page
 function endGame(questCounter) {
 
-    if (questCounter > 10) {
+    if (questCounter > 9) {
         window.alert('done')
         console.log('done')
-        window.location.href = "../pug/endgame.pug"
+        window.location.href = "thankyou.html"
     }
 }
 console.log(questionsAsked)
@@ -112,8 +112,6 @@ quizForm.addEventListener("submit", function(evt) {
             endGame(counter)
             questCounter += 1 // adds to the quiz counter
 
-            console.log(questCounter) // testing to see if counter works
-                // return questCounter
             clearTheQuiz()
             displayQuiz()
         } else if (quizInput[1].checked && quizInput[1].value == questionsAsked[questCounter].realAnswer) {
