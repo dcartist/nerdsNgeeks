@@ -89,6 +89,7 @@ function scoring(updatedScore) {
 }
 
 function endGame(questCounter) {
+
     if (questCounter > 10) {
         window.alert('done')
         console.log('done')
@@ -98,6 +99,7 @@ function endGame(questCounter) {
 console.log(questionsAsked)
 let newQuestion = questionsAsked[questCounter]
 quizForm.addEventListener("submit", function(evt) {
+        let counter = 1;
         evt.preventDefault();
         // questCounter++
         console.log(questCounter)
@@ -106,7 +108,8 @@ quizForm.addEventListener("submit", function(evt) {
         if (quizInput[0].checked && quizInput[0].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
             scoring(questionsAsked[questCounter].score)
-            endGame(questCounter)
+            counter += 1
+            endGame(counter)
             questCounter += 1 // adds to the quiz counter
 
             console.log(questCounter) // testing to see if counter works
@@ -117,7 +120,8 @@ quizForm.addEventListener("submit", function(evt) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
 
             questCounter += 1 // adds to the quiz counter
-            endGame(questCounter)
+            counter += 1
+            endGame(counter)
             console.log(questCounter) // testing to see if counter works
             scoring(questionsAsked[questCounter].score)
             clearTheQuiz()
@@ -126,7 +130,8 @@ quizForm.addEventListener("submit", function(evt) {
         } else if (quizInput[2].checked && quizInput[2].value == questionsAsked[questCounter].realAnswer) {
             console.log(`${questionsAsked[questCounter].realAnswer} value 3 is stated`)
             questCounter += 1 // adds to the quiz counter
-            endGame(questCounter)
+            counter += 1
+            endGame(counter)
             console.log(questCounter)   // testing to see if counter works
             scoring(questionsAsked[questCounter].score)
             clearTheQuiz()
@@ -134,6 +139,8 @@ quizForm.addEventListener("submit", function(evt) {
             return questCounter
         } else {
             questCounter += 1
+            counter += 1
+            endGame(counter)
             clearTheQuiz()
             displayQuiz()
 
