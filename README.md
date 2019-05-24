@@ -1,9 +1,7 @@
 #Nerds-N-Geeks trivia
 
 This is a trivia game that consist of 10 random question about various topics.
-
 ![image](src/img/NNG_intro.png)
-
 #The technology used was :
 Bootstrap, Pug(Jade), CSS, SCSS, and Javascript
 
