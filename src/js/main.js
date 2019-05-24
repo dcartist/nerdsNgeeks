@@ -6,10 +6,10 @@ var quizInput = document.querySelectorAll('.quizInput')
 var activeQuestion = document.querySelector('#activeQuestion');
 var quizForm = document.querySelector('#quizForm')
 var mainQuiz = document.querySelectorAll('.mainQuiz')
-var questCounter = 0
+var questCounter = 0 //counts the amount of questions
 var scoreNum = 0
 var score = document.querySelector('#score')
-score.innerHTML = 0
+score.innerHTML = 0 // shows the number at the beginning of the Quiz
 questNumber.innerHTML = "This is another test"
 var mainQList = [] // Main list of questions
 var questionsAsked = []
@@ -19,9 +19,7 @@ var showAnswer = document.querySelector('.answers')
 var answerText = document.querySelector('.answerText')
 var keepGoing = document.querySelector('.keepGoing')
 var submitButton = document.querySelector('.submitButton')
-var theEnd = document.querySelectorAll('.theEnd')
-
-
+var theEnd = document.querySelectorAll('.theEnd') // the ending
 
 keepGoing.addEventListener("click", function(evt) {
     evt.preventDefault;
@@ -42,7 +40,6 @@ starter.addEventListener("click", function(evt) {
     mainQuiz[0].style.display = "block"
     mainQuiz[1].style.display = "block"
     displayQuiz()
-
 })
 
 class QuestionMaker {
@@ -88,18 +85,7 @@ mainQList[28] = new QuestionMaker('Which of the following names did the Daleks r
 mainQList[29] = new QuestionMaker('Richard Horvitz, who provided the voice of Zim, did NOT have a role in which of the following shows?', 'Grim & Evil', 'Rugrats', 'Power Rangers', 'Rugrats', 40)
 mainQList[30] = new QuestionMaker('What year was "The Empire Strikes Back" first released into theaters?', '1977', '1980', '1983', '1980', 40)
 mainQList[31] = new QuestionMaker('On Invader Zim in the episode "The Nightmare Begins" what song does GIR sing, on the way to Earth?', 'The Taco Song', 'The Waffles song', 'The Doom song', 'The Doom song', 140)
-
-
-//makes the list of questions random
-// function randomPick() {
-//     for (i = 0; i < 11; i++) {
-//         var newNum = Math.floor(Math.random() * 27)
-//         questionsAsked.push(mainQList[newNum])
-//     }
-//     return questionsAsked
-// }
-// randomPick()
-
+mainQList[32] = new QuestionMaker('In the human body, what is the hallux?', 'Index Finger', 'Big Toe', 'Belly Button', 'Big Toe', 70)
 
 //shuffle from https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/
 function shuffle(array) {
