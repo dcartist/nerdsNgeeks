@@ -21,6 +21,8 @@ var keepGoing = document.querySelector('.keepGoing')
 var submitButton = document.querySelector('.submitButton')
 var theEnd = document.querySelectorAll('.theEnd')
 
+
+
 keepGoing.addEventListener("click", function(evt) {
     evt.preventDefault;
     questCounter += 1
@@ -59,7 +61,7 @@ mainQList[1] = new QuestionMaker('Who was the captain of the Enterprise in the p
 mainQList[2] = new QuestionMaker('In the arcade game Joust, the player controls a knight riding what animal?', 'Camel', 'Ostrich', 'Horse', 'Ostrich', 30)
 mainQList[3] = new QuestionMaker('The Connecticut Leather Company later became what toy company that was popular in the 1980s for its Cabbage Patch Kids and video game consoles?', 'Cole', 'LeCo', 'Coleco', 'Coleco', 60)
 mainQList[4] = new QuestionMaker('What now retired NBA player starred in the 1996 movie Kazaam', 'Sinbad', 'Shaquille O’Neal', 'Micheal Jordan', 'Shaquille', 25)
-mainQList[5] = new QuestionMaker('The first person shooter video game DOOM was first released in what year?', '1991', '1993', '1992', '1993', 30)
+mainQList[5] = new QuestionMaker('The first person shooter video game DOOM was first released in what year?', '1991', '1993', '1992', '1993', 120)
 mainQList[6] = new QuestionMaker('Appearing on the show in 1982, who was the youngest person to ever host Saturday Night Live?', 'Jodi Foster', 'Drew Barrymore', 'Brooke Shields', 'Drew Barrymore', 35)
 mainQList[7] = new QuestionMaker('What was the first publicly traded U.S. company to reach a $1 trillion market cap? ', 'Microsoft', 'Facebook', 'Apple', 'Apple', 25)
 mainQList[8] = new QuestionMaker('In what year did Nintendo release its first game console in North America?', '1985', '1986', '1987', '1985', 35)
@@ -68,9 +70,9 @@ mainQList[10] = new QuestionMaker('Orson Welles provided the voice for which Tra
 mainQList[11] = new QuestionMaker('What is the most abundant chemical element in the Universe?', 'Hydrogen', 'Oxygen', 'Carbon', 'Hydrogen', 30)
 mainQList[12] = new QuestionMaker('What was the name of the Eminem single that set the world’s record in 2013 for the most words used in a song?', 'Berzerk', 'Loose Yourself', 'Rap God', 'Rap God', 30)
 mainQList[13] = new QuestionMaker('The Star Trek episode "Mirror, Mirror" has certain members of the crew switch places with their counterparts in an alternate, or mirror, universe. Which of these characters did not switch places?', 'Spock', 'Uhura', 'Scotty', 'Spock', 20)
-mainQList[14] = new QuestionMaker('In which film was the spaceship called Nostromo?', '2001: A Space Odyssey', 'Alien', 'Spaceballs', 'Alien', 30)
+mainQList[14] = new QuestionMaker('In which film was the spaceship called Nostromo?', '2001: A Space Odyssey', 'Alien', 'Spaceballs', 'Alien', 230)
 mainQList[15] = new QuestionMaker('What is the registry number for the star ship Enterprise in the original series?', 'NCC-1401', 'NCC-1610', 'NCC-1701', 'NCC-1701', 30)
-mainQList[16] = new QuestionMaker("What is Captain Kirk's middle name?", 'Tiberius', 'Titus', 'Thaddeus', 'Tiberius', 25)
+mainQList[16] = new QuestionMaker("What is Captain Kirk's middle name?", 'Tiberius', 'Titus', 'Thaddeus', 'Tiberius', 125)
 mainQList[17] = new QuestionMaker('Which of the following is not a name used to describe the stable wormhole on "Deep Space Nine"?', 'The Passageway', 'The Galactic Vortex', 'The Eye of the Universe', 'The Galactic Vortex', 30)
 mainQList[18] = new QuestionMaker('Head of Scientific Research at UNIT, this cunning lady has met The Doctor multiple times. She helped him deal with small black cubes, the Zygons and even the terrifying Daleks', 'River Song', 'Clara Oswald', 'Kate Stewart', 'Kate Stewart', 30)
 mainQList[19] = new QuestionMaker('Who is the author of the book “A Brief History of Time”?', 'Stephen Hawking', 'Michio Kaku', 'Lawrence M. Krauss', 'Stephen Hawking', 35)
@@ -78,10 +80,14 @@ mainQList[20] = new QuestionMaker('Leonard Nimoy  provided the voice for which T
 mainQList[21] = new QuestionMaker('In the Harry Potter series, what is the name of Harry’s pet owl? ', 'Norbert', 'Fawkes', 'Hedwig', 'Hedwig', 30)
 mainQList[22] = new QuestionMaker('Which video game studio created the popular online game Fortnite?', 'Sony', 'Epic Games', 'Bethesda', 'Epic Games', 30)
 mainQList[23] = new QuestionMaker('In 1975 an engineer created the first electronic camera while working for what company?', 'Kodak', 'Canon', 'Nikon', 'Kodak', 30)
-mainQList[24] = new QuestionMaker('What British lead singer was born Farrokh Bulsara?', 'M.I.A.', 'Freddie Mercury', 'Zayn Malik', 'Freddie Mercury', 40)
+mainQList[24] = new QuestionMaker('What British lead singer was born Farrokh Bulsara?', 'M.I.A.', 'Freddie Mercury', 'Zayn Malik', 'Freddie Mercury', 140)
 mainQList[25] = new QuestionMaker('How many members were in the American rock band The White Stripes?', '3', '4', '2', '2', 20)
 mainQList[26] = new QuestionMaker('Who wrote “Waiting for Godot”?', 'William Butler Yeats', 'Oscar Wilde', 'Samuel Beckett', 'Samuel Beckett', 20)
-mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'Hemolysis', 'Hemolin', 'Hemoglobin', 'Hemoglobin', 40)
+mainQList[27] = new QuestionMaker('What gives red blood cells their color?', 'Hemolysis', 'Hemolin', 'Hemoglobin', 'Hemoglobin', 80)
+mainQList[28] = new QuestionMaker('Which of the following names did the Daleks refer to the Doctor as?', 'The Oncoming Storm', 'Hurricane Doctor', 'The Upcoming Storm', 'The Oncoming Storm', 40)
+mainQList[29] = new QuestionMaker('Richard Horvitz, who provided the voice of Zim, did NOT have a role in which of the following shows?', 'Grim & Evil', 'Rugrats', 'Power Rangers', 'Rugrats', 40)
+mainQList[30] = new QuestionMaker('What year was "The Empire Strikes Back" first released into theaters?', '1977', '1980', '1983', '1980', 40)
+mainQList[31] = new QuestionMaker('On Invader Zim in the episode "The Nightmare Begins" what song does GIR sing, on the way to Earth?', 'The Taco Song', 'The Waffles song', 'The Doom song', 'The Doom song', 140)
 
 
 //makes the list of questions random
